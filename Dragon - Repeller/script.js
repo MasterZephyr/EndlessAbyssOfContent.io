@@ -156,6 +156,7 @@ function buyWeapon(){
     if(currentWeapon < weapons.length - 1){
         if(gold >= 30){
             gold -= 30;
+            goldText.innerText = gold;
             currentWeapon++;
             let newWeapon = weapons[currentWeapon].name;
             text.innerText = "You now have a " + newWeapon + ".";
