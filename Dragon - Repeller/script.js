@@ -45,12 +45,12 @@ const monsters = [
     },
     {
         name: "fanged beast",
-        level: 8,
+        level: 15,
         health: 60
     },
     {
         name: "dragon",
-        level: 20,
+        level: 30,
         health: 300
     }
 ];
