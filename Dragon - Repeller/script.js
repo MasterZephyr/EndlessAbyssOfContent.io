@@ -61,7 +61,7 @@ const locations = [
     name: "town square",
     "button text": ["Go to store", "Go to cave", "Fight dragon"],
     "button functions": [goStore, goCave, fightDragon],
-    text: "You are in the town square. You see a sign that says \"Store\""
+    text: "You are in the town square. You see a sign that says \"Store\"."
   },
   {
     name: "store",
@@ -73,7 +73,7 @@ const locations = [
     name: "cave",
     "button text": ["Fight slime", "Fight fanged beast", "Go to town square"],
     "button functions": [fightSlime, fightBeast, goTown],
-    text: "You enter the cave. You see some monsters"
+    text: "You enter the cave. You see some monsters."
   },
   {
     name: "fight",
@@ -84,8 +84,8 @@ const locations = [
   {
     name: "kill monster",
     "button text": ["Go to town square", "Go to town square", "Go to town square"],
-    "button functions": [goTown, goTown, goTown],
-    text: "The monster screams \"Arg!\" as it dies. You gain experience points and find gold"
+    "button functions": [goTown, goTown, easterEgg],
+    text: "The monster screams \"Arg!\" as it dies. You gain experience points and find gold."
   },
   {
     name: "lose",
@@ -98,6 +98,14 @@ const locations = [
     "button text": ["REPLAY?", "REPLAY?", "REPLAY?"],
     "button functions": [restart, restart, restart],
     text: "You defeated the dragon! YOU WIN THE GAME! 🎊"
+  },
+  {
+    name: "easter egg",
+    "button text": ["2", "8", "Go to town square?"],
+    "button functions": [pickTwo, pickEight, goTown],
+    text: "You find a secret game. Pick a number above. "
+    + "Ten numbers will be randomly chosen between 0 and 10. "
+    + "If the number you choose matches one of the random numbers, you win!"
   }
 ];
 
@@ -203,11 +211,13 @@ function attack(){
     text.innerText = "The " + monsters[fighting].name + " attacks.";
     text.innerText = "You attack it with your " + weapons[currentWeapon].name + ".";
 
-
-    health -= getMonsterAttackValue(monsters[fighting].level);
-
-
-    monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
+    if(isMonsterHit()){
+        health -= getMonsterAttackValue(monsters[fighting].level);
+        monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
+    } else {
+        text.innerText = " You miss";
+        health -= getMonsterAttackValue(monsters[fighting].level);
+    }
     healthText.innerText = health;
     monsterHealthText.innerText = monsterHealth;
     if(health <= 0){
@@ -215,11 +225,20 @@ function attack(){
     } else if (monsterHealth <= 0){
         fighting === 2 ? winGame() : defeatMonster();
     }
+
+    if(Math.random() <= 0.1 && inventory.length !== 1){
+        text.innerText += " Your " + inventory.pop() + " breaks."
+        currentWeapon--;
+    }
 }
 
-
 function getMonsterAttackValue(level){
-    let
+    let hit = (level * 5) - (Math.floor(Math.random() * xp));
+    return hit;
+}
+
+function isMonsterHit(){
+    return Math.random() > 0.2 || health < 20;;
 }
 
 //(condition) ? if true goes here : else goes here;
@@ -245,7 +264,6 @@ function winGame(){
     update(locations[6]);
 }
 
-
 function restart(){
     xp = 0;
     health = 100;
@@ -258,7 +276,44 @@ function restart(){
     goTown();
 }
 
+function easterEgg(){
+    update(locations[7]);
+}
 
+
+function pickTwo(){
+    pick(2);
+}
+
+function pickEight(){
+    pick(8);
+}
+
+
+function pick(guess){
+    let numbers = [];
+    while (numbers.length < 10){
+        numbers.push(Math.floor(Math.random() * 11));
+    }
+
+    text.innerText = "You picked " + guess + ". Here are the random numbers:\n";
+    for(let i = 0; i < numbers.length; i++){
+        text.innerText += numbers[i] + "\n";
+    }
+
+    if(numbers.indexOf(guess) !== -1){
+        text.innerText += "Good guess! You win (20 gold)!";
+        gold += 20;
+        goldText.innerText = gold;
+    } else {
+        text.innerText += "Wrong guess! You lose 10 health!";
+        health -= 10;
+        healthText.innerText = health;
+        if(health <= 0){
+            lose();
+        }
+    }
+}
 
 
 
