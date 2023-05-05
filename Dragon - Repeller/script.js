@@ -212,21 +212,12 @@ function attack(){
     text.innerText = "The " + monsters[fighting].name + " attacks.";
     text.innerText = "You attack it with your " + weapons[currentWeapon].name + ".";
 
-    let attackValue = getMonsterAttackValue(monsters[fighting].level);
     if(isMonsterHit()){
-        if(attackValue > 0){
-            health -= attackValue;
-        } else {
-            health += attackValue
-        }
+        health -= getMonsterAttackValue(monsters[fighting].level);
         monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
     } else {
         text.innerText = " You miss";
-        if(attackValue > 0){
-            health -= attackValue;
-        } else {
-            health += attackValue
-        }
+        health -= getMonsterAttackValue(monsters[fighting].level);
     }
     healthText.innerText = health;
     monsterHealthText.innerText = monsterHealth;
