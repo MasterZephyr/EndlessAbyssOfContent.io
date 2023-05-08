@@ -161,7 +161,7 @@
 
 .userDetails {
     position: absolute;
-    bottom: 300px;  
+    bottom: 300px;
     z-index: 5;
     text-align: center;
 }
@@ -186,6 +186,65 @@ span {
     color: hsl(0, 0%, 59%);
 }
 
+
+@media screen and (max-width: 375px) {
+    .mainCard {
+        max-width: 375px;
+        height: 667px;
+    }
+
+    .card {
+        width: 320px;
+    }
+
+    .bgCard {
+        width: 320px;
+    }
+
+    .BottomCard {
+        width: 320px;
+    }
+
+    .followers {
+        bottom: 40px;
+    }
+
+    .likes {
+        bottom: 40px;
+    }
+
+    .photos {
+        bottom: 40px;
+    }
+
+    .mainCardBG {
+        max-width: 375px;
+        height: 667px;
+    }
+
+    .TopPattern {
+        right: -65px;
+        bottom: 650px;
+    }
+
+    .BottomCard {
+        left: -100px;
+    top: 350px;
+    }
+
+    .profile {
+        top: 215px;
+    }
+
+    .userDetails {
+        bottom: 280px;
+    }
+
+    .placeOfStay {
+        width: 320px;
+        bottom: 270px;
+    }
+}
 
 
 
