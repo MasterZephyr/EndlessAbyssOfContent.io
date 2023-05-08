@@ -1,0 +1,192 @@
+* {
+    box-sizing: border-box;
+    font-size: 18px;
+    font-family: Kumbh Sans;
+}
+
+
+.mainCard{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    max-width: 1440px;
+    height: 720px;
+    background-color: hsl(185, 75%, 39%);
+}
+
+
+.card{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 3;
+
+    border-radius: 16px;
+    
+    background-color: rgb(255, 255, 255);
+
+    width: 350px;
+    height: 380px;
+    text-align: center;
+
+}
+
+.bgCard {
+    border-top-right-radius: 16px;
+    border-top-left-radius: 16px;
+}
+
+.BottomCard {
+    display: flex;
+    align-items: center;
+
+    position: absolute;
+    top: 459px;
+    
+  
+
+    border-top: gray;
+    border-top-width: 1px;
+
+    height: 100px;
+    width: 350px;
+
+    border-top-style: solid;
+    
+
+    border-bottom-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+    z-index: 5;
+}
+
+
+.followers {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 30px;
+    left: 35px;
+}
+
+
+.followers .numFollowers {
+    position: absolute;
+    bottom: 25px;
+     
+}
+
+
+
+.likes {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 30px;
+    left: 160px;
+}
+
+
+.likes .numLikes {
+    position: absolute;
+    bottom: 25px;
+}   
+
+
+.photos {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 30px;
+    left: 250px;
+}
+
+.photos .numPhotos {
+    position: absolute;
+    bottom: 25px;
+}
+
+
+.mainCardBG {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    max-width: 1440px;
+    height: 720px;
+
+    background-color: hsl(185, 75%, 39%);
+    overflow: hidden;
+}
+
+.TopPattern {
+    position: relative;
+    right: 35px;
+    bottom: 490px;
+}
+
+.BottomPattern {
+    position: relative;
+    left: 10px;
+    top: 350px;
+}
+
+
+.profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 255px;
+    
+    width: 112px;
+    height: 112px;
+    border-radius: 50%;
+
+    z-index: 5;
+    background-color: white;
+    
+}
+
+.profilePic {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+}
+
+.pic {
+    border-radius: 50%;
+}
+
+.userDetails {
+    position: absolute;
+    bottom: 300px;  
+    z-index: 5;
+    text-align: center;
+}
+
+.ignore {
+    font-size: 18px;
+}
+
+.placeOfStay {
+    position: absolute;
+
+    width: 350px;
+    bottom: 290px;
+
+    z-index: 5;
+    text-align: center;
+}
+
+span {
+    font-size: 14px;
+    display: inline;
+    color: hsl(0, 0%, 59%);
+}
+
+
+
+
+
