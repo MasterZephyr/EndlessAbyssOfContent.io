@@ -187,7 +187,7 @@ span {
 }
 
 
-@media screen and (max-width: 375px) {
+@media only screen and (max-width: 375px) {
     .mainCard {
         max-width: 375px;
         height: 667px;
