@@ -70,5 +70,5 @@ Honestly making this website was a challenge and i know for a fact there are pro
 
 ## Author
 
-- Website - [Damilola](https://www.your-site.com)
+- Website - [https://masterzephyr.github.io/EndlessAbyssOfContent.io/FrontendPrac/ProfilePicComponent/index.html]
 - Frontend Mentor - [https://www.frontendmentor.io/profile/MasterZephyr](https://www.frontendmentor.io/profile/yourusername)
