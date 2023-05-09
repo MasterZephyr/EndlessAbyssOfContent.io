@@ -39,7 +39,7 @@ This is a solution to the [Profile card component challenge on Frontend Mentor](
 - Flexbox
 
 ### What I learned
-I learnt the use of flexbox and how it allows for items in <div> to be resized and shifted. I also learnt a little bit more how position works when using absolute or relative.
+I learnt the use of flexbox and how it allows for items in "<div>" to be resized and shifted. I also learnt a little bit more how position works when using absolute or relative.
 ```html
 <div class="mainCardBG">
       <div class="TopPattern">
