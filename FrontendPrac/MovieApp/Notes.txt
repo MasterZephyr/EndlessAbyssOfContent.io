@@ -1,3 +1,6 @@
 You should use a class if you need to use the same selector more than once within a page or a site. 
 While an ID is specific to a single element, classes can be assigned to multiple elements on a page
  or throughout the website. They are not unique.
+
+
+ 
